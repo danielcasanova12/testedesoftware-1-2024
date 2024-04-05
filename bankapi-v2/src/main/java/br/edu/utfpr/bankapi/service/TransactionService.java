@@ -1,6 +1,5 @@
 package br.edu.utfpr.bankapi.service;
 
-import org.aspectj.weaver.ast.Not;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -8,7 +7,6 @@ import br.edu.utfpr.bankapi.dto.DepositDTO;
 import br.edu.utfpr.bankapi.dto.TransferDTO;
 import br.edu.utfpr.bankapi.dto.WithdrawDTO;
 import br.edu.utfpr.bankapi.exception.NotFoundException;
-import br.edu.utfpr.bankapi.model.Account;
 import br.edu.utfpr.bankapi.model.Transaction;
 import br.edu.utfpr.bankapi.model.TransactionType;
 import br.edu.utfpr.bankapi.repository.AccountRepository;

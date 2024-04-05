@@ -16,6 +16,6 @@
 POST {{URL}}deposit
 
 {
-    "receiver": 12345,
+    "reciverAccontNumber": 12345,
     "amount": 1000
 }
