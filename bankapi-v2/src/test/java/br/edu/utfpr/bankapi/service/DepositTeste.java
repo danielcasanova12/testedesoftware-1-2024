@@ -3,6 +3,7 @@ package br.edu.utfpr.bankapi.service;
 import java.util.Optional;
 
 import org.checkerframework.checker.units.qual.C;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.ArgumentCaptor;
@@ -12,9 +13,12 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
+import com.fasterxml.jackson.annotation.JsonTypeInfo.As;
+
 import br.edu.utfpr.bankapi.dto.DepositDTO;
 import br.edu.utfpr.bankapi.model.Account;
 import br.edu.utfpr.bankapi.model.Transaction;
+import br.edu.utfpr.bankapi.model.TransactionType;
 import br.edu.utfpr.bankapi.repository.AccountRepository;
 import br.edu.utfpr.bankapi.repository.TransactionRepository;
 
@@ -36,11 +40,15 @@ public class DepositTeste {
         // arrange
         long Number = 12345;
         double amount = 100.0;
+        var saldoInicial = 0.0;
         var dto = new DepositDTO(Number, amount);
 
         var receiverAccount = new Account("juc", 12345, 0, 0);
 
         BDDMockito.given(accountRepository.getByNumber(Number)).willReturn(Optional.of(receiverAccount));
+        Assertions.assertEquals(amount, receiverAccount.getBalance());
+        Assertions.assertEquals(TransactionType.DEPOSIT, Transactioncaptor.getValue().getType());
+        Assertions.assertEquals(saldoInicial, Transactioncaptor.getValue().getReceiverAccount().getBalance());
 
         // act
 
