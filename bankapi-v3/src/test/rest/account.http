@@ -1,10 +1,11 @@
-@URL=http://localhost:8080/account
+@URL=http://localhost:8081/account
 
 
 
 
 ### GET ALL
 GET {{URL}}
+
 
 ### GET BY NUMBER
 GET {{URL}}/12345
@@ -14,7 +15,7 @@ POST {{URL}}
 Content-Type: application/json
 
 {
-    "name": "Juares Silva",
+    "name": "Ricardo Sobjak",
     "number": 12345,
     "balance": 1000,
     "specialLimit": 1000
@@ -37,7 +38,7 @@ PUT {{URL}}/2
 Content-Type: application/json
 
 {
-    "name": "John Smith",
+    "name": "Ricardo Sobjak",
     "number": 11111,
     "balance": 1000,
     "specialLimit": 1000
