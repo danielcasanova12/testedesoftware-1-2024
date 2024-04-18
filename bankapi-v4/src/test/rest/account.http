@@ -1,0 +1,45 @@
+@URL=http://localhost:8081/account
+
+
+
+
+### GET ALL
+GET {{URL}}
+
+
+### GET BY NUMBER
+GET {{URL}}/12345
+
+### CREATE
+POST {{URL}}
+Content-Type: application/json
+
+{
+    "name": "Ricardo Sobjak",
+    "number": 12345,
+    "balance": 1000,
+    "specialLimit": 1000
+}
+
+### CREATE
+POST {{URL}}
+Content-Type: application/json
+
+{
+    "name": "Ana Campos",
+    "number": 12346,
+    "balance": 500,
+    "specialLimit": 0
+}
+
+
+### UPDATE
+PUT {{URL}}/2
+Content-Type: application/json
+
+{
+    "name": "Ricardo Sobjak",
+    "number": 11111,
+    "balance": 1000,
+    "specialLimit": 1000
+}
