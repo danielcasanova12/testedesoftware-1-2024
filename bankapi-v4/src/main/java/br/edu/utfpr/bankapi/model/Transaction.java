@@ -45,5 +45,6 @@ public class Transaction {
         this.receiverAccount = receiverAccount;
         this.amount = amount;
         this.type = type;
+        this.dateTime = LocalDateTime.now();
     }
 }
